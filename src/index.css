@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes show {
+  from {
+    opacity: 0;
+  }
+  to{
+    opacity: .75;
+  }
+}
+@keyframes translate-left {
+  from {
+    transform: translateX(150%);
+  }
+  to{
+    transform: translateX(0);
+  }
+}
+@keyframes title {
+  from{
+    @apply
+    text-8xl
+    text-nowrap
+    blur-[.5px]
+    font-light;
+  }
+  to{
+    @apply text-xl;
+    text-shadow: none;
+  }
+}
+
+.scroll-opacity {
+  animation: show linear both;
+  animation-timeline: scroll(root);
+  animation-range: 0 250px;
+}
+.scroll-left-to-right{
+  animation: translate-left linear both;
+  animation-timeline: scroll(root);
+  animation-range: 0 250px;
+}
+.scroll-title{
+  animation: title linear both;
+  animation-timeline: scroll(root);
+  animation-range: 0 250px;
+}
