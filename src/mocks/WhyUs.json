@@ -1,0 +1,17 @@
+[
+    {
+        "title": "Calidad",
+        "description": "Ofrecemos fotos de la más alta calidad.",
+        "img": "https://ieperiodismo.com/wp-content/uploads/tipos-de-fotografias.jpg"
+    },
+    {
+        "title": "Transparencia",
+        "description": "Siempre somos claros y honestos sobre nuestros procesos y resultados.",
+        "img": "https://utel.mx/blog/wp-content/uploads/2013/08/shutterstock_108638072.jpg"
+    },
+    {
+        "title": "Precio",
+        "description": "Ofrecemos precios competitivos sin comprometer la calidad.",
+        "img": "https://static.eldiario.es/clip/71d118ff-5ef2-449c-be8a-6c321304fa70_16-9-aspect-ratio_default_0.jpg"
+    }
+]
