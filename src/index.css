@@ -30,6 +30,27 @@
     transform: translateX(0)
   }
 }
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(90px);
+  }
+  to{
+    opacity: 1;
+    transform: translateX(0)
+  }
+}
+@keyframes zoom-out {
+  from {
+    opacity: 0;
+    scale: 1.1
+  }
+  to{
+    opacity: 1;
+    scale: 1
+  }
+}
+
 @keyframes title {
   from{
     @apply
@@ -49,21 +70,39 @@
   animation-range: 0 250px;
 }
 .scroll-fade-left{
-  view-timeline: --left-element;
+  view-timeline: --fade-left-element;
   view-timeline-axis: block;
-  animation-timeline: --left-element;
+  animation-timeline: --fade-left-element;
   animation-name: fade-left;
 
   animation-range: entry 20% cover 40%;
   animation-fill-mode: both;
 }
 .scroll-fade-right{
-  view-timeline: --right-element;
+  view-timeline: --fade-right-element;
   view-timeline-axis: block;
-  animation-timeline: --right-element;
+  animation-timeline: --fade-right-element;
   animation-name: fade-right;
 
   animation-range: entry 20% cover 40%;
+  animation-fill-mode: both;
+}
+.scroll-fade-up{
+  view-timeline: --fade-up-element;
+  view-timeline-axis: block;
+  animation-timeline: --fade-up-element;
+  animation-name: fade-up;
+
+  animation-range: entry 5% cover 25%;
+  animation-fill-mode: both;
+}
+.scroll-zoom-out{
+  view-timeline: --zoom-out-element;
+  view-timeline-axis: block;
+  animation-timeline: --zoom-out-element;
+  animation-name: zoom-out;
+
+  animation-range: entry 5% cover 25%;
   animation-fill-mode: both;
 }
 .scroll-title{
