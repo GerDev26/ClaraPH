@@ -30,7 +30,7 @@ export function Menu ({ children, menuState }: { children: React.ReactNode, menu
   return (
     <ul
       className={
-        'scroll-opacity fixed right-0 top-0 transition h-screen bg-gray-950 w-60 flex flex-col gap-2 pt-20 md:relative md:w-fit md:h-fit md:flex-row md:bg-transparent md:pt-0 md:translate-x-0' +
+        ' fixed right-0 top-0 transition h-screen bg-gray-950 w-60 flex flex-col gap-2 pt-20 md:relative md:w-fit md:h-fit md:flex-row md:bg-transparent md:pt-0 md:translate-x-0' +
         menuClass
       }
     >

@@ -10,18 +10,10 @@
     opacity: .75;
   }
 }
-@keyframes translate-left {
-  from {
-    transform: translateX(150%);
-  }
-  to{
-    transform: translateX(0);
-  }
-}
 @keyframes title {
   from{
     @apply
-    text-8xl
+    text-3xl
     text-nowrap
     blur-[.5px]
     font-light;
@@ -31,7 +23,6 @@
     text-shadow: none;
   }
 }
-
 .scroll-opacity {
   animation: show linear both;
   animation-timeline: scroll(root);
@@ -47,3 +38,4 @@
   animation-timeline: scroll(root);
   animation-range: 0 250px;
 }
+
