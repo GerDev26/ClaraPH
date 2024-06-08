@@ -1,6 +1,6 @@
 import { Footer } from '../components/Footer'
 import { ImageContainer } from '../components/ImageContainer'
-import { Navbar } from '../components/Navbar'
+import { NavbarHome } from '../components/Navbar'
 import { Separator } from '../components/Separator'
 import { BigCategories } from '../components/home/BigCategories'
 import { Presentation } from '../components/home/Presentation'
@@ -11,7 +11,7 @@ import WhyUs from '../mocks/WhyUs.json'
 export function Home (): JSX.Element {
   return (
     <>
-      <Navbar />
+      <NavbarHome />
       <main className='flex flex-col'>
         <ImageContainer img='../../public/img/Cosplay.jpg' />
         <Separator title='Sobre mí' description='Conoce mi perfil profesional y un poco de mi vida' />

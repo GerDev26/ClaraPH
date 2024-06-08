@@ -10,11 +10,32 @@ export function Navbar (): JSX.Element {
   }
 
   return (
+    <nav className='sticky top-0 left-0 z-20 w-full flex justify-between items-center p-5 text-white text-l opacity-95'>
+      <div className=' absolute top-0 left-0 w-full h-full bg-black z-0' />
+      <h1 className='text-2xl font-bold uppercase z-10'>Clara Photographer</h1>
+      <Menu menuState={menuState}>
+        <Item text='Inicio' to='/' />
+        <Item text='Sobre mi' to='Sobre Nosotros' />
+        <Item text='Catalogo' to='Catalogo' />
+        <Item text='Contacto' to='Contacto' />
+      </Menu>
+      <Bars3Icon onClick={toggleMenu} className='relative z-50 w-8 h-8 text-white md:hidden' />
+    </nav>
+  )
+}
+export function NavbarHome (): JSX.Element {
+  const [menuState, setMenuState] = useState(false)
+
+  const toggleMenu = (): void => {
+    setMenuState(!menuState)
+  }
+
+  return (
     <nav className='fixed top-0 left-0 z-20 w-full flex justify-between items-center p-5 text-white text-l'>
       <div className=' absolute scroll-opacity top-0 left-0 w-full h-full bg-black z-0' />
       <h1 className='scroll-title text-2xl font-bold uppercase z-10'>Clara Photographer</h1>
       <Menu menuState={menuState}>
-        <Item text='Inicio' to='Inicio' />
+        <Item text='Inicio' to='/' />
         <Item text='Sobre mi' to='Sobre Nosotros' />
         <Item text='Catalogo' to='Catalogo' />
         <Item text='Contacto' to='Contacto' />
