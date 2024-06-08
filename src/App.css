@@ -13,3 +13,8 @@ body{
   min-width: 100%;
   min-height: 100vh;
 }
+
+.grid-container{
+  columns: 2;
+  column-gap: 20px;
+}

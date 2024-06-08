@@ -93,7 +93,7 @@
   animation-timeline: --fade-up-element;
   animation-name: fade-up;
 
-  animation-range: entry 5% cover 25%;
+  animation-range: entry 15% cover 30%;
   animation-fill-mode: both;
 }
 .scroll-zoom-out{
@@ -102,7 +102,7 @@
   animation-timeline: --zoom-out-element;
   animation-name: zoom-out;
 
-  animation-range: entry 5% cover 25%;
+  animation-range: entry 15% cover 30%;
   animation-fill-mode: both;
 }
 .scroll-title{
