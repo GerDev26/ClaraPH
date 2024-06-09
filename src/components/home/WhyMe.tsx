@@ -13,8 +13,8 @@ export function WhyMe ({ data }: { data: WhyMeTypes[] }): JSX.Element {
           <p className='text-l md:text-xl'>{data[0].description}</p>
         </div>
 
-        <img className='scroll-zoom-out w-full h-full object-cover order-4 md:order-5' src={data[1].img} alt='' /> {/* Intercambiar cuando use md: */}
-        <div className='scroll-fade-up flex flex-col text-center items-center justify-center p-8 order-3 md:order-2'> {/* Intercambiar cuando use md: */}
+        <img className='scroll-zoom-out w-full h-full object-cover order-4 md:order-5' src={data[1].img} alt='' />
+        <div className='scroll-fade-up flex flex-col text-center items-center justify-center p-8 order-3 md:order-2'>
           <h2 className='text-xl font-bold mb-4 uppercase md:text-2xl'>{data[1].title}</h2>
           <p className='text-l md:text-xl'>{data[1].description}</p>
         </div>

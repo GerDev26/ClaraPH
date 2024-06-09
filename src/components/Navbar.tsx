@@ -19,7 +19,7 @@ export function Navbar (): JSX.Element {
         <Item text='Catalogo' to='Catalogo' />
         <Item text='Contacto' to='Contacto' />
       </Menu>
-      <Bars3Icon onClick={toggleMenu} className='relative z-50 w-8 h-8 text-white md:hidden' />
+      <Bars3Icon onClick={toggleMenu} className='relative z-50 w-8 h-8 mr-2 text-white md:hidden' />
     </nav>
   )
 }
@@ -40,7 +40,7 @@ export function NavbarHome (): JSX.Element {
         <Item text='Catalogo' to='Catalogo' />
         <Item text='Contacto' to='Contacto' />
       </Menu>
-      <Bars3Icon onClick={toggleMenu} className='relative z-50 w-8 h-8 text-white md:hidden' />
+      <Bars3Icon onClick={toggleMenu} className='relative z-50 w-8 h-8 mr-2 text-white md:hidden' />
     </nav>
   )
 }
