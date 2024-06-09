@@ -14,7 +14,7 @@ export function Navbar (): JSX.Element {
       <div className=' absolute top-0 left-0 w-full h-full bg-black z-0' />
       <h1 className='text-2xl font-bold uppercase z-10'>Clara Photographer</h1>
       <Menu menuState={menuState}>
-        <Item text='Inicio' to='/' />
+        <Item text='Inicio' to='/ClaraPH' />
         <Item text='Sobre mi' to='Sobre Nosotros' />
         <Item text='Catalogo' to='Catalogo' />
         <Item text='Contacto' to='Contacto' />
