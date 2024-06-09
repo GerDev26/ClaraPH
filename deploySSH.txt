@@ -1,0 +1,140 @@
+El mensaje "Could not open a connection to your authentication agent" indica que el agente SSH no está ejecutándose. Necesitamos asegurarnos de que el agente SSH esté en funcionamiento y de que la clave SSH esté añadida correctamente.
+
+### Paso 1: Iniciar el agente SSH
+
+1. **Iniciar el agente SSH**:
+
+   Abre Git Bash y ejecuta:
+
+   ```bash
+   eval $(ssh-agent -s)
+   ```
+
+   Esto debería iniciar el agente SSH y mostrar un mensaje con el PID del proceso, algo como:
+
+   ```plaintext
+   Agent pid 59566
+   ```
+
+### Paso 2: Añadir la clave SSH al agente
+
+1. **Añadir tu clave SSH al agente**:
+
+   Ahora, añade tu clave SSH al agente:
+
+   ```bash
+   ssh-add /c/Users/germi/.ssh/id_ed25519
+   ```
+
+   Si la clave está protegida por una passphrase, te pedirá que la ingreses.
+
+### Paso 3: Verificar las claves SSH añadidas al agente
+
+1. **Verificar las claves SSH activas**:
+
+   Asegúrate de que la clave SSH ha sido añadida correctamente:
+
+   ```bash
+   ssh-add -l
+   ```
+
+   Este comando debería listar tu clave SSH añadida.
+
+### Paso 4: Probar la conexión SSH con GitHub
+
+1. **Probar la conexión SSH**:
+
+   Verifica si puedes conectar a GitHub usando SSH:
+
+   ```bash
+   ssh -T git@github.com
+   ```
+
+   Deberías ver un mensaje de bienvenida de GitHub, como:
+
+   ```plaintext
+   Hi <tu-usuario-de-github>! You've successfully authenticated, but GitHub does not provide shell access.
+   ```
+
+### Paso 5: Verificar la URL remota de tu repositorio
+
+1. **Verificar la URL remota**:
+
+   Asegúrate de que la URL remota está configurada para usar SSH:
+
+   ```bash
+   git remote -v
+   ```
+
+   Deberías ver algo como:
+
+   ```plaintext
+   origin  git@github.com:GerDev26/ClaraPH.git (fetch)
+   origin  git@github.com:GerDev26/ClaraPH.git (push)
+   ```
+
+2. **Si la URL no es SSH, cambiarla**:
+
+   ```bash
+   git remote set-url origin git@github.com:GerDev26/ClaraPH.git
+   ```
+
+### Paso 6: Desplegar usando `gh-pages`
+
+1. **Instalar `gh-pages` si aún no lo has hecho**:
+
+   ```bash
+   npm install gh-pages --save-dev
+   ```
+
+2. **Configurar el script de despliegue en tu `package.json`**:
+
+   Asegúrate de que tu `package.json` tenga los siguientes scripts:
+
+   ```json
+   "scripts": {
+     "build": "vite build",
+     "predeploy": "npm run build",
+     "deploy": "gh-pages -d dist -f"
+   }
+   ```
+
+3. **Construir y desplegar la aplicación**:
+
+   ```bash
+   npm run deploy
+   ```
+
+### Alternativa: Usar HTTPS en lugar de SSH
+
+Si sigues teniendo problemas con SSH, puedes cambiar la URL remota a HTTPS. Esto te permitirá usar tu nombre de usuario y contraseña de GitHub (o token de acceso personal) en lugar de claves SSH.
+
+1. **Cambiar la URL remota a HTTPS**:
+
+   ```bash
+   git remote set-url origin https://github.com/GerDev26/ClaraPH.git
+   ```
+
+2. **Hacer push a GitHub con HTTPS**:
+
+   Ahora puedes hacer push a GitHub utilizando HTTPS:
+
+   ```bash
+   git push origin gh-pages
+   ```
+
+3. **Desplegar usando `gh-pages` con HTTPS**:
+
+   Asegúrate de que el despliegue funcione correctamente con HTTPS:
+
+   ```bash
+   npm run deploy
+   ```
+
+### Verificación final
+
+1. **Configuración de GitHub Pages**:
+
+   Ve a la configuración de tu repositorio en GitHub (`Settings`) y en la sección de `Pages`, asegúrate de que la rama `gh-pages` esté seleccionada y que la carpeta `/` (raíz) esté seleccionada.
+
+Siguiendo estos pasos, deberías poder resolver los problemas de autenticación con tu clave SSH y desplegar tu aplicación Vite en GitHub Pages correctamente.
