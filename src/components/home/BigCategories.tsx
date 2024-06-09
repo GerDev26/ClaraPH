@@ -6,7 +6,7 @@ interface ItemOfBigCategoriesTypes {
 }
 export function ItemOfBigCategories ({ title, img }: ItemOfBigCategoriesTypes): JSX.Element {
   return (
-    <Link className='group relative z-0 h-[70vh] md:h-[120vh] w-full' to='/ClaraPH/galery'>
+    <Link className='group relative z-0 h-[70vh] md:h-[120vh] w-full' to='/galery'>
       <h3 className='transition-all absolute bottom-6 left-6 z-20 text-white text-5xl uppercase opacity-80 md:opacity-0 md:scale-110 md:group-hover:scale-100 md:group-hover:opacity-100'>
         {title}
       </h3>
