@@ -7,8 +7,8 @@ export default function App (): JSX.Element {
   return (
     <>
       <Routes>
-        <Route path='/clara_ph' element={<Home />} />
-        <Route path='/clara_ph/galery' element={<Galery />} />
+        <Route path='/ClaraPH' element={<Home />} />
+        <Route path='/ClaraPH/galery' element={<Galery />} />
       </Routes>
     </>
   )
